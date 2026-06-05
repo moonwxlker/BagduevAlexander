@@ -1,54 +1,54 @@
-/* Общие базовые стили из ваших вариантов */
+/* Общие базовые стили для всех страниц */
 body {
     font-family: sans-serif;
-    background-color: darkorange; /* Для страниц, где нужен оранжевый фон */
-}
-
-/* На странице "Обо мне" вы хотели градиент, поэтому добавим его отдельно для body, если нужно, */
-/* но чтобы код оставался простым, CSS применяет эти правила ко всем страницам одинаково */
-html {
-    background-image: linear-gradient(white, navy);
-    min-height: 100%;
+    background-color: darkorange; /* Стандартный фон для большинства страниц */
 }
 
 h1 {
     border: 7px solid rgb(255, 230, 0);
-    background-color: rgb(255, 230, 0);
-    color: black;
 }
 
 ul {
     border: 5px solid green;
-    background-color: green;
-    color: aliceblue;
 }
 
 img {
     border: 6px solid blue;
 }
 
+/* Стандартный стиль ссылки в шапке (для mysites и info) */
+header a {
+    border: 4px solid green;
+}
+
 li {
     border: 3px solid white;
 }
 
-/* Стили для ссылок в шапке */
-header a {
+/* Специфичные стили для Главной страницы (index.html) */
+header a[href="leonov.html"] {
+    border: 4px solid rgb(204, 0, 255);
+    background-color: rgb(204, 0, 255);
+    text-decoration: none;
+}
+
+/* Специфичные стили для страницы "Обо мне" (leonov.html) */
+body.page-about {
+    background-image: linear-gradient(white, navy);
+}
+
+body.page-about h1 {
+    background-color: rgb(255, 230, 0);
+}
+
+body.page-about ul {
+    background-color: green;
+    color: aliceblue;
+}
+
+header a.header-about {
     border: 5px solid chartreuse;
     border-radius: 15%;
     text-decoration: none;
     background-color: chartreuse;
-    color: black;
-    padding: 2px 10px;
-    display: inline-block;
-}
-
-/* Ссылки в меню на главной */
-.link-nav {
-    display: inline-block;
-    margin-right: 15px;
-    color: blue;
-    background-color: white;
-    padding: 5px;
-    border: 2px solid blue;
-    text-decoration: none;
 }
