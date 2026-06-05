@@ -1,243 +1,54 @@
-/* Общие сбросы и настройки */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Общие базовые стили из ваших вариантов */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: #f8fafc;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.6;
+    font-family: sans-serif;
+    background-color: darkorange; /* Для страниц, где нужен оранжевый фон */
 }
 
-main {
-  flex: 1;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px 20px;
+/* На странице "Обо мне" вы хотели градиент, поэтому добавим его отдельно для body, если нужно, */
+/* но чтобы код оставался простым, CSS применяет эти правила ко всем страницам одинаково */
+html {
+    background-image: linear-gradient(white, navy);
+    min-height: 100%;
 }
 
-/* Шапка сайта */
-header {
-  background-color: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #eab308;
-}
-
-.link-header {
-  color: #eab308;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.link-header:hover {
-  transform: scale(1.05);
-}
-
-header nav {
-  display: flex;
-  gap: 20px;
-}
-
-.link-nav {
-  color: #94a3b8;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.link-nav:hover, .link-nav.active {
-  color: #1e293b;
-  background-color: #eab308;
-}
-
-/* Заголовки */
 h1 {
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 20px;
-  border-left: 6px solid #eab308;
-  padding-left: 15px;
+    border: 7px solid rgb(255, 230, 0);
+    background-color: rgb(255, 230, 0);
+    color: black;
 }
 
-h2 {
-  color: #eab308;
-  margin: 30px 0 15px 0;
+ul {
+    border: 5px solid green;
+    background-color: green;
+    color: aliceblue;
 }
 
-/* Главная страница (Hero Section) */
-.hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+img {
+    border: 6px solid blue;
 }
 
-.hero-text {
-  flex: 1;
+li {
+    border: 3px solid white;
 }
 
-.skills-list {
-  list-style: none;
-  margin-top: 20px;
+/* Стили для ссылок в шапке */
+header a {
+    border: 5px solid chartreuse;
+    border-radius: 15%;
+    text-decoration: none;
+    background-color: chartreuse;
+    color: black;
+    padding: 2px 10px;
+    display: inline-block;
 }
 
-.skills-list li {
-  background: rgba(234, 179, 8, 0.1);
-  border: 1px solid rgba(234, 179, 8, 0.3);
-  padding: 12px 20px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-}
-
-/* Страница портфолио (Сайты) */
-.text-big {
-  font-size: 1.3rem;
-  color: #cbd5e1;
-  margin-bottom: 30px;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.portfolio-item {
-  background: #1e293b;
-  border: 1px solid #334155;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s, border-color 0.3s;
-}
-
-.portfolio-item:hover {
-  transform: translateY(-5px);
-  border-color: #eab308;
-}
-
-.portfolio-item.bonus {
-  background: linear-gradient(135deg, #1e293b, #451a03);
-  border-color: #f97316;
-}
-
-.link-text {
-  color: #eab308;
-  text-decoration: none;
-  border-bottom: 1px dashed #eab308;
-}
-
-.link-text:hover {
-  color: #f97316;
-  border-bottom-style: solid;
-}
-
-/* Полезная информация */
-.info-block {
-  background: #1e293b;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-}
-
-.styled-list {
-  padding-left: 20px;
-}
-
-.styled-list li {
-  margin-bottom: 10px;
-  color: #cbd5e1;
-}
-
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-/* Обо мне */
-.about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.about-list li {
-  background: #1e293b;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  list-style: none;
-}
-
-.about-gallery {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.about-gallery img {
-  flex: 1;
-  min-width: 280px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 3px solid #334155;
-  transition: border-color 0.3s;
-}
-
-.about-gallery img:hover {
-  border-color: #eab308;
-}
-
-/* Подвал */
-footer {
-  text-align: center;
-  padding: 30px;
-  background-color: #0f172a;
-  border-top: 1px solid #334155;
-}
-
-.social img {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s;
-}
-
-.social img:hover {
-  transform: rotate(360deg) scale(1.1);
-}
-
-/* Адаптивность для мобилок */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-  .hero-section {
-    flex-direction: column;
-  }
+/* Ссылки в меню на главной */
+.link-nav {
+    display: inline-block;
+    margin-right: 15px;
+    color: blue;
+    background-color: white;
+    padding: 5px;
+    border: 2px solid blue;
+    text-decoration: none;
 }
